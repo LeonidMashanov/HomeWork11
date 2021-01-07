@@ -54,5 +54,22 @@ public class HumanUI {
         return indexToRemote;
     }
 
+    public String nameToSearch(Scanner sc) {
+        System.out.println("enter name to search");
+        String name = sc.nextLine();
+        return name;
+    }
+
+    public void showHumanOfSearch(HumanList list, int index) {
+        if (index < list.size()) System.out.println("found Human - " + list.get(index));
+        else System.out.println("not found");
+    }
+
+    @Override
+    public String toString() {
+        return "HumanUI{" +
+                "human-" + human +
+                '}';
+    }
 
 }
