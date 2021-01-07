@@ -22,7 +22,7 @@ public class HumanController {
     }
 
     public void searchBySurname(HumanList humanList, String surname) {
-        ui.showHumanOfSearch(humanList, services.searchBySurname(humanList,surname));
+        ui.showHumanOfSearch(humanList, services.searchBySurname(humanList, surname));
     }
 
     public void searchByName(HumanList humanList, String name) {

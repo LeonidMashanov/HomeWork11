@@ -1,18 +1,24 @@
 package com.ithilel.Services;
 
-import com.ithilel.Human.entities.Human;
+import com.ithilel.entities.Human;
 import com.ithilel.utils.HumanList;
-
-
-import java.util.Arrays;
 
 public class HumanServices {
     private HumanList humans = new HumanList();
 
     public HumanList removeHumanByIndex(HumanList humanList, int index) {
-        humanList.setToRemote(index-1, humanList, null);
-        return humanList;
+        HumanList list = new HumanList();
+        int newIndex = 0;
+        humanList.setToRemote(index - 1, humanList, null);
+        for (int i = 0; i < humanList.size() - 1; i++) {
+            if (humanList.get(i) != null) {
+                Human h = humanList.get(i);
+                list.add(h);
+            }
+        }
+        return list;
     }
+
     public int searchBySurname(HumanList humanList, String search) {
         Human h = new Human(search, search, search);
         int index = 0;
@@ -41,6 +47,12 @@ public class HumanServices {
         return index;
     }
 
+    @Override
+    public String toString() {
+        return "HumanServices{" +
+                "humans=" + humans +
+                '}';
+    }
 }
 
 

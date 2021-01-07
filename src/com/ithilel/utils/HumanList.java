@@ -1,5 +1,7 @@
 package com.ithilel.utils;
-import com.ithilel.Human.entities.Human;
+
+import com.ithilel.entities.Human;
+
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -50,6 +52,7 @@ public class HumanList {
                 ", human=" + human +
                 '}';
     }
+
 }
 
 

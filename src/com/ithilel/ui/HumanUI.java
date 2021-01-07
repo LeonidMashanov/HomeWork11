@@ -1,6 +1,6 @@
 package com.ithilel.ui;
 
-import com.ithilel.Human.entities.Human;
+import com.ithilel.entities.Human;
 
 import com.ithilel.utils.HumanList;
 
@@ -44,7 +44,7 @@ public class HumanUI {
         for (int i = 0; i < humanList.size(); i++) {
             h = humanList.get(i);
             if (h != null)
-                System.out.println((num++) + " - " + h.getSurname() + " , " + h.getName() + " , " + h.getPatronymic());
+                System.out.println((i) + " - " + h.getSurname() + " , " + h.getName() + " , " + h.getPatronymic());
         }
     }
 

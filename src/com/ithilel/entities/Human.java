@@ -1,4 +1,4 @@
-package com.ithilel.Human.entities;
+package com.ithilel.entities;
 
 import java.util.Objects;
 
@@ -43,11 +43,6 @@ public class Human {
     }
 
     @Override
-    public String toString() {
-        return super.toString();
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -60,5 +55,13 @@ public class Human {
     @Override
     public int hashCode() {
         return Objects.hash(surname, name, patronymic);
+    }
+
+    @Override
+    public String toString() {
+        return "Human" +
+                "surname:" + surname + '\'' +
+                ", name:" + name + '\'' +
+                ", patronymic:" + patronymic + '\''                 ;
     }
 }
