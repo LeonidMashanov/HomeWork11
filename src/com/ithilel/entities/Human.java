@@ -59,8 +59,10 @@ public class Human {
     @Override
     public String toString() {
         return "Human  " +
-                "surname : " + surname + '\'' +
-                ", name : " + name + '\'' +
-                ", patronymic : " + patronymic + '\''                 ;
+                "surname : " + surname +
+                ", name : " + name +
+                ", patronymic : " + patronymic;
     }
+
+
 }

@@ -1,11 +1,10 @@
 package com.ithilel;
 
-import com.ithilel.Services.HumanServices;
+import com.ithilel.Services.HumanConsoleServices;
 import com.ithilel.menu.*;
 import com.ithilel.menu.base.Menu;
 import com.ithilel.menu.base.MenuItem;
 import com.ithilel.ui.HumanConsoleUI;
-import com.ithilel.utils.HumanList;
 
 import java.util.Scanner;
 
@@ -14,8 +13,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         HumanConsoleUI humanUI = new HumanConsoleUI(sc);
-        HumanServices humanServices = new HumanServices();
-        HumanController controller = new HumanController(humanServices, humanUI);
+        HumanConsoleServices humanConsoleServices = new HumanConsoleServices();
+        HumanController controller = new HumanController(humanConsoleServices, humanUI);
 
         Menu menu = new Menu(new MenuItem[]{
                 new NewHumanMenuItem(controller),

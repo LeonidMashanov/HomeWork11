@@ -7,6 +7,7 @@ public class SearchHumanByNameMenuItem extends MenuItem {
     private HumanController humanController;
     public SearchHumanByNameMenuItem(HumanController controller) {
         super("Search Human by surname");
+        this.humanController=controller;
     }
 
     @Override

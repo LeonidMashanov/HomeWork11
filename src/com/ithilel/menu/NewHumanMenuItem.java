@@ -3,7 +3,6 @@ package com.ithilel.menu;
 import com.ithilel.HumanController;
 import com.ithilel.menu.base.MenuItem;
 
-import java.util.Scanner;
 
 public class NewHumanMenuItem extends MenuItem {
     private HumanController controller;
