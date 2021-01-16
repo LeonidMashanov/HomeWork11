@@ -6,47 +6,26 @@ import com.ithilel.utils.HumanList;
 public class HumanServices {
     private HumanList humans = new HumanList();
 
-    public HumanList removeHumanByIndex(HumanList humanList, int index) {
+    public HumanList removeHumanByIndex( int index) {
         HumanList list = new HumanList();
         int newIndex = 0;
-        humanList.setToRemote(index - 1, humanList, null);
-        for (int i = 0; i < humanList.size() - 1; i++) {
-            if (humanList.get(i) != null) {
-                Human h = humanList.get(i);
+        humans.setToRemote(index - 1, humans, null);
+        for (int i = 0; i < humans.size(); i++) {
+            if (humans.get(i) != null) {
+                Human h = humans.get(i);
                 list.add(h);
             }
         }
         return list;
     }
 
-    public int searchBySurname(HumanList humanList, String search) {
-        Human h = new Human(search, search, search);
-        int index = 0;
-        boolean have = false;
-        for (int i = 0; i < humanList.size(); i++) {
-            if (humanList.get(i).getSurname() == null) continue;
-            else have = humanList.get(i).getSurname().equals(h.getSurname());
+    public HumanList searchHuman(String search) {
 
-            if (have == true) break;
-            index++;
-        }
-        return index;
+        return humans.searchHuman(search);
     }
-
-    public int searchByName(HumanList humanList, String search) {
-        Human h = new Human(search, search, search);
-        int index = 0;
-        boolean have = false;
-        for (int i = 0; i < humanList.size(); i++) {
-            if (humanList.get(i).getName() == null) continue;
-            else have = humanList.get(i).getName().equals(h.getName());
-
-            if (have == true) break;
-            index++;
-        }
-        return index;
+    public HumanList showHumans(){
+        return humans;
     }
-
     @Override
     public String toString() {
         return "HumanServices{" +

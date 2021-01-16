@@ -30,7 +30,15 @@ public class HumanList {
     public void setToRemote(int index, HumanList humanList, Human human) {
         humanList.set(index, human);
     }
-
+    public HumanList searchHuman(String search) {
+        HumanList temp = new HumanList();
+        for (Human elem : humans) {
+            if (search.equals(elem.getName())||search.equals(elem.getSurname())){
+                temp.add(elem);
+            }
+        }
+        return temp;
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

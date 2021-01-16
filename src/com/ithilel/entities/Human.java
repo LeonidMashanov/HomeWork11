@@ -23,7 +23,6 @@ public class Human {
 
     public void setSurname(String surname) {
         this.surname = surname;
-        return;
     }
 
     public String getName() {
@@ -59,9 +58,9 @@ public class Human {
 
     @Override
     public String toString() {
-        return "Human" +
-                "surname:" + surname + '\'' +
-                ", name:" + name + '\'' +
-                ", patronymic:" + patronymic + '\''                 ;
+        return "Human  " +
+                "surname : " + surname + '\'' +
+                ", name : " + name + '\'' +
+                ", patronymic : " + patronymic + '\''                 ;
     }
 }

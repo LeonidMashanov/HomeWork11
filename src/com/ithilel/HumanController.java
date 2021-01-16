@@ -1,39 +1,46 @@
 package com.ithilel;
 
 import com.ithilel.Services.HumanServices;
-import com.ithilel.ui.HumanUI;
-import com.ithilel.utils.HumanList;
+import com.ithilel.ui.HumanConsoleUI;
 
 
 public class HumanController {
     HumanServices services;
-    HumanUI ui;
-    HumanList list;
+    HumanConsoleUI ui;
 
-    public HumanController(HumanServices services, HumanUI ui) {
+
+
+    public HumanController(HumanServices services, HumanConsoleUI ui) {
         this.services = services;
         this.ui = ui;
+
+
     }
 
-    public HumanList removeHumanByIndex(HumanList humanList) {
+    public void removeHumanByIndex() {
         int indexToRemote = ui.indexToRemoteHuman();
-        services.removeHumanByIndex(humanList, indexToRemote);
-        return humanList;
+        services.removeHumanByIndex(indexToRemote);
+
     }
 
-    public void searchBySurname(HumanList humanList, String surname) {
-        ui.showHumanOfSearch(humanList, services.searchBySurname(humanList, surname));
+    public void searchBySurname() {
+        ui.showHumanOfSearch(services.searchHuman(ui.nameToSearch()));
     }
 
-    public void searchByName(HumanList humanList, String name) {
-        ui.showHumanOfSearch(humanList, services.searchByName(humanList, name));
+    public void searchByName() {
+        ui.showHumanOfSearch(services.searchHuman(ui.nameToSearch()));
     }
 
+    public void showHumans(){
+        ui.showHumans(services.showHumans());
+    }
+    public void readHuman (){
+        ui.readHuman(services.showHumans());
+    }
     @Override
     public String toString() {
         return "HumanController{" +
-                "services=" + services +
-                ", list=" + list +
-                '}';
+                "services=" + services
+                ;
     }
 }
