@@ -4,31 +4,31 @@ import com.ithilel.Services.HumanServices;
 import com.ithilel.ui.HumanUI;
 
 public class HumanController {
-    HumanServices services;
-    HumanUI ui;
+    HumanServices humanServices;
+    HumanUI humanUI;
 
-    public HumanController(HumanServices services, HumanUI ui) {
-        this.services = services;
-        this.ui = ui;
+    public HumanController(HumanServices humanServices , HumanUI ui) {
+        this.humanServices = humanServices;
+        this.humanUI = ui;
     }
 
     public void removeHumanByIndex() {
-        int indexToRemote = ui.indexToRemoteHuman();
-        services.removeHumanByIndex(indexToRemote);
+        int indexToRemote = humanUI.indexToRemoteHuman();
+        humanServices.removeHumanByIndex(indexToRemote);
     }
 
     public void searchBySurname() {
-        ui.showHumanOfSearch(services.searchHuman(ui.nameToSearch()));
+        humanUI.showHumanOfSearch(humanServices.searchHuman(humanUI.surnameToSearch()));
     }
 
     public void searchByName() {
-        ui.showHumanOfSearch(services.searchHuman(ui.nameToSearch()));
+        humanUI.showHumanOfSearch(humanServices.searchHuman(humanUI.nameToSearch()));
     }
 
     public void showHumans(){
-        ui.showHumans(services.showHumans());
+        humanUI.showHumans(humanServices.showHumans());
     }
     public void readHuman (){
-        ui.readHuman(services.showHumans());
+        humanUI.readHuman(humanServices.showHumans());
     }
 }

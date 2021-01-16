@@ -1,7 +1,10 @@
 package com.ithilel.ui;
+
 import com.ithilel.entities.Human;
 import com.ithilel.utils.HumanList;
+
 import java.util.Scanner;
+
 public class HumanConsoleUI implements HumanUI {
     Scanner sc;
 
@@ -12,33 +15,33 @@ public class HumanConsoleUI implements HumanUI {
 
     @Override
     public HumanList readHuman(HumanList humanList) {
-        System.out.println("enter new human");
-        System.out.println("enter surname");
+        System.out.println("enter new Human");
+        System.out.println("enter Surname");
         String surname = sc.nextLine();
-        System.out.println("enter name ");
+        System.out.println("enter Name ");
         String name = sc.nextLine();
-        System.out.println("enter patronymic");
+        System.out.println("enter Patronymic");
         String patronymic = sc.nextLine();
-        Human h = new Human(surname, name, patronymic);
-        if (humanList.suchAList(h)) System.out.println("such human is on the list");
-        else humanList.add(h);
+        Human human = new Human(surname, name, patronymic);
+        if (humanList.suchAList(human)) System.out.println("Such Human is on the list");
+        else humanList.add(human);
         return humanList;
     }
 
     @Override
     public void showHumans(HumanList humanList) {
-        Human h;
+        Human human;
         int num = 1;
         for (int i = 0; i < humanList.size(); i++) {
-            h = humanList.get(i);
-            if (h != null)
-                System.out.println((num++) + " - " + h.getSurname() + " , " + h.getName() + " , " + h.getPatronymic());
+            human = humanList.get(i);
+            if (human != null)
+                System.out.println((num++) + " - " + human.getSurname() + " , " + human.getName() + " , " + human.getPatronymic());
         }
     }
 
     @Override
     public int indexToRemoteHuman() {
-        System.out.println("enter index to remote Human from list");
+        System.out.println("Enter index to remote Human from list");
         int indexToRemote = sc.nextInt();
         sc.nextLine();
         return indexToRemote;
@@ -46,7 +49,14 @@ public class HumanConsoleUI implements HumanUI {
 
     @Override
     public String nameToSearch() {
-        System.out.println("enter name to search");
+        System.out.println("Enter Name to search");
+        String name = sc.nextLine();
+        return name;
+    }
+
+    @Override
+    public String surnameToSearch() {
+        System.out.println("enter Surname to search");
         String name = sc.nextLine();
         return name;
     }

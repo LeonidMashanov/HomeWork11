@@ -2,47 +2,44 @@ package com.ithilel.utils;
 
 import com.ithilel.entities.Human;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 public class HumanList {
-    private Human[] humans = new Human[0];
+
+    List<Human> humans = new LinkedList<>();
 
     public void add(Human h) {
-//        if (suchAList(h)){return;}
-        humans = Arrays.copyOf(humans, humans.length + 1);
-        humans[humans.length - 1] = h;
+        humans.add(h);
     }
 
     public boolean suchAList(Human human) {
-
-        for (Human elem : humans) {
-            if(elem.equals(human))
-                return true;
-        }
-                
-        return false;
+        if (humans.contains(human)) return true;
+        else return false;
     }
 
     public Human get(int index) {
-        return humans[index];
+        return humans.get(index);
     }
 
     public void set(int index, Human value) {
-        humans[index] = value;
+        humans.set(index, value);
     }
 
     public int size() {
-        return humans.length;
+        return humans.size();
     }
 
-    public void setToRemote(int index, HumanList humanList, Human human) {
-        humanList.set(index, human);
+    public void removeByIndex(int index) {
+
+        humans.remove(index);
     }
 
     public HumanList searchHuman(String search) {
         HumanList temp = new HumanList();
         for (Human elem : humans) {
-            if (search.equals(elem.getName()) || search.equals(elem.getSurname())) {
+            if (elem.getSurname().contains(search)||elem.getName().contains(search)){
                 temp.add(elem);
             }
         }

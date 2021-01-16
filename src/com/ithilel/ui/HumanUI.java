@@ -14,5 +14,7 @@ public interface HumanUI {
 
     String nameToSearch();
 
+    String surnameToSearch();
+
     void showHumanOfSearch(HumanList list);
 }

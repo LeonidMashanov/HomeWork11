@@ -13,15 +13,15 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         HumanConsoleUI humanUI = new HumanConsoleUI(sc);
-        HumanConsoleServices humanConsoleServices = new HumanConsoleServices();
-        HumanController controller = new HumanController(humanConsoleServices, humanUI);
+        HumanConsoleServices humanServices = new HumanConsoleServices();
+        HumanController humanController = new HumanController(humanServices, humanUI);
 
         Menu menu = new Menu(new MenuItem[]{
-                new NewHumanMenuItem(controller),
-                new ShowHumanMenuItem(controller),
-                new RemoveHumanByIndexMenuItem(controller),
-                new SearchHumanBySurnameMenuItem(controller),
-                new SearchHumanByNameMenuItem(controller),
+                new NewHumanMenuItem(humanController),
+                new ShowHumanMenuItem(humanController),
+                new RemoveHumanByIndexMenuItem(humanController),
+                new SearchHumanBySurnameMenuItem(humanController),
+                new SearchHumanByNameMenuItem(humanController),
                 new ExitMenuItem()
         },sc);
         menu.run();

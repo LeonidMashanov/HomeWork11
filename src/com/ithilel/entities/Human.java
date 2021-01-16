@@ -13,10 +13,6 @@ public class Human {
         this.patronymic = patronymic;
     }
 
-    public Human(String surname) {
-        this.surname = surname;
-    }
-
     public String getSurname() {
         return surname;
     }
@@ -58,7 +54,7 @@ public class Human {
 
     @Override
     public String toString() {
-        return "Human  " +
+        return "Human:  " +
                 "surname : " + surname +
                 ", name : " + name +
                 ", patronymic : " + patronymic;
