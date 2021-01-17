@@ -3,6 +3,9 @@ package com.ithilel;
 import com.ithilel.Services.HumanServices;
 import com.ithilel.ui.HumanUI;
 
+import java.util.List;
+
+
 public class HumanController {
     HumanServices humanServices;
     HumanUI humanUI;
@@ -18,17 +21,17 @@ public class HumanController {
     }
 
     public void searchBySurname() {
-        humanUI.showHumanOfSearch(humanServices.searchHuman(humanUI.surnameToSearch()));
+        humanUI.showHumanOfSearch((List) humanServices.searchHuman(humanUI.surnameToSearch()));
     }
 
     public void searchByName() {
-        humanUI.showHumanOfSearch(humanServices.searchHuman(humanUI.nameToSearch()));
+        humanUI.showHumanOfSearch((List) humanServices.searchHuman(humanUI.nameToSearch()));
     }
 
     public void showHumans(){
-        humanUI.showHumans(humanServices.showHumans());
+        humanUI.showHumans((List) humanServices.showHumans());
     }
     public void readHuman (){
-        humanUI.readHuman(humanServices.showHumans());
+        humanUI.readHuman((List) humanServices.showHumans());
     }
 }

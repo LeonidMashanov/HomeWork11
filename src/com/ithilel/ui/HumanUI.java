@@ -1,14 +1,13 @@
 package com.ithilel.ui;
 
-
-import com.ithilel.utils.HumanList;
+import java.util.List;
 
 public interface HumanUI {
 
 
-    HumanList readHuman(HumanList humanList);
+    List readHuman(List humanList);
 
-    void showHumans(HumanList humanList);
+    void showHumans(List humanList);
 
     int indexToRemoteHuman();
 
@@ -16,5 +15,5 @@ public interface HumanUI {
 
     String surnameToSearch();
 
-    void showHumanOfSearch(HumanList list);
+    void showHumanOfSearch(List list);
 }
