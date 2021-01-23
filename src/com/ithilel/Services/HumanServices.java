@@ -1,11 +1,12 @@
 package com.ithilel.Services;
 
-import com.ithilel.utils.HumanList;
+import java.util.ArrayList;
+import java.util.List;
 
 public interface HumanServices {
     void removeHumanByIndex(int index);
 
-    HumanList searchHuman(String search);
+    ArrayList searchHuman(String search);
 
-    HumanList showHumans();
+    List showHumans();
 }

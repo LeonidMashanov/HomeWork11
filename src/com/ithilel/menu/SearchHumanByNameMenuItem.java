@@ -5,9 +5,10 @@ import com.ithilel.menu.base.MenuItem;
 
 public class SearchHumanByNameMenuItem extends MenuItem {
     private HumanController humanController;
+
     public SearchHumanByNameMenuItem(HumanController controller) {
         super("Search Human by surname");
-        this.humanController=controller;
+        this.humanController = controller;
     }
 
     @Override

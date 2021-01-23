@@ -11,7 +11,6 @@ public class Menu {
         this.sc = sc;
     }
 
-
     public void run() {
         while (true) {
             showMenu();
@@ -30,10 +29,11 @@ public class Menu {
     }
 
     private int getUserChoice() {
+        int choice = 0;
         System.out.println("Enter number of you choice");
-        int choice = sc.nextInt() - 1;
+        if (sc.hasNextInt()) choice = sc.nextInt();
         sc.nextLine();
-        return choice;
+        return choice - 1;
     }
 
     private void showMenu() {

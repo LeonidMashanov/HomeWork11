@@ -1,6 +1,7 @@
 package com.ithilel;
 
 import com.ithilel.Services.HumanConsoleServices;
+
 import com.ithilel.menu.*;
 import com.ithilel.menu.base.Menu;
 import com.ithilel.menu.base.MenuItem;
@@ -23,9 +24,7 @@ public class Main {
                 new SearchHumanBySurnameMenuItem(humanController),
                 new SearchHumanByNameMenuItem(humanController),
                 new ExitMenuItem()
-        },sc);
+        }, sc);
         menu.run();
-
     }
-
 }
