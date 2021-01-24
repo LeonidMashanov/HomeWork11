@@ -1,5 +1,6 @@
 package com.ithilel.Services;
 
+import com.ithilel.Exception.NotFoundException;
 import com.ithilel.entities.Human;
 
 import java.util.ArrayList;
@@ -11,9 +12,9 @@ public class HumanConsoleServices implements HumanServices {
     List<Human> humans = new LinkedList<>();
 
     @Override
-    public void removeHumanByIndex(int index) {
-        if (index < 0 || index >= humans.size()) System.out.println("human not found");
-        humans.remove(index - 1);
+    public void removeHumanByIndex(int index) throws NotFoundException {
+        if (index < 0 || index >= humans.size()) throw new NotFoundException();
+        else humans.remove(index);
     }
 
     @Override
@@ -22,14 +23,14 @@ public class HumanConsoleServices implements HumanServices {
     }
 
     @Override
-    public ArrayList searchHuman(String search) {
+    public ArrayList searchHuman(String search) throws NotFoundException {
         ArrayList temp = new ArrayList();
         for (Human elem : humans) {
             if (elem.getSurname().contains(search) || elem.getName().contains(search)) {
                 temp.add(elem);
             }
         }
-        if (temp.size() == 0) System.out.println("not found of you search");
+        if (temp.size() == 0)throw new NotFoundException();
 
         return temp;
     }

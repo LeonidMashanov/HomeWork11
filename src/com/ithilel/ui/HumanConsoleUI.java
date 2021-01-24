@@ -1,5 +1,7 @@
 package com.ithilel.ui;
 
+import com.ithilel.Exception.HumanAddException;
+
 import com.ithilel.entities.Human;
 
 import java.util.InputMismatchException;
@@ -14,7 +16,7 @@ public class HumanConsoleUI implements HumanUI {
     }
 
     @Override
-    public List readHuman(List list) {
+    public List readHuman(List list) throws HumanAddException {
         System.out.println("enter new Human");
         System.out.println("enter Surname");
         String surname = sc.nextLine();
@@ -23,7 +25,7 @@ public class HumanConsoleUI implements HumanUI {
         System.out.println("enter Patronymic");
         String patronymic = sc.nextLine();
         Human human = new Human(surname, name, patronymic);
-        if (list.contains(human)) System.out.println("Such Human is on the list");
+        if (list.contains(human)) throw new HumanAddException();
         else list.add(human);
         return list;
     }
@@ -40,16 +42,16 @@ public class HumanConsoleUI implements HumanUI {
     }
 
     @Override
-    public int indexToRemoteHuman() {
+    public int indexToRemoteHuman() throws InputMismatchException {
         System.out.println("Enter index to remote Human from list");
         int indexToRemote = 0;
         try {
             indexToRemote = sc.nextInt();
         } catch (InputMismatchException e) {
-            System.out.println("wrong combination");
-            sc.nextLine();
+            System.out.println("incorrect input of data");
         }
-        return indexToRemote;
+        sc.nextLine();
+        return indexToRemote - 1;
     }
 
     @Override

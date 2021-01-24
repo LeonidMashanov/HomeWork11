@@ -1,5 +1,7 @@
 package com.ithilel;
 
+import com.ithilel.Exception.HumanAddException;
+import com.ithilel.Exception.NotFoundException;
 import com.ithilel.Services.HumanConsoleServices;
 
 import com.ithilel.menu.*;
@@ -11,7 +13,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws HumanAddException, NotFoundException {
         Scanner sc = new Scanner(System.in);
         HumanConsoleUI humanUI = new HumanConsoleUI(sc);
         HumanConsoleServices humanServices = new HumanConsoleServices();

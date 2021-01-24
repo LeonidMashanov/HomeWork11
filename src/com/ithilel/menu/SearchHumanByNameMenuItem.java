@@ -1,5 +1,6 @@
 package com.ithilel.menu;
 
+import com.ithilel.Exception.NotFoundException;
 import com.ithilel.HumanController;
 import com.ithilel.menu.base.MenuItem;
 
@@ -13,6 +14,11 @@ public class SearchHumanByNameMenuItem extends MenuItem {
 
     @Override
     public void exec() {
-        humanController.searchByName();
+       try {
+           humanController.searchByName();
+       }catch (NotFoundException e){
+           System.out.println("Human with given parameters was not found");
+       }
+
     }
 }

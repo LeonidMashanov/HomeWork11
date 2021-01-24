@@ -1,5 +1,10 @@
 package com.ithilel.menu.base;
 
+import com.ithilel.Exception.HumanAddException;
+
+import com.ithilel.Exception.NotFoundException;
+
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu {
@@ -11,7 +16,7 @@ public class Menu {
         this.sc = sc;
     }
 
-    public void run() {
+    public void run() throws HumanAddException, NotFoundException {
         while (true) {
             showMenu();
             int choice = getUserChoice();
@@ -28,10 +33,16 @@ public class Menu {
         return choice < 0 || choice >= item.length;
     }
 
-    private int getUserChoice() {
+    private int getUserChoice() throws InputMismatchException {
         int choice = 0;
         System.out.println("Enter number of you choice");
-        if (sc.hasNextInt()) choice = sc.nextInt();
+        try {
+            choice = sc.nextInt();
+
+        } catch (InputMismatchException e) {
+            System.out.println("incorrect input of data");
+
+        }
         sc.nextLine();
         return choice - 1;
     }

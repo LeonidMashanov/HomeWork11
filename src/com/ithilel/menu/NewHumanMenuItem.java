@@ -1,5 +1,6 @@
 package com.ithilel.menu;
 
+import com.ithilel.Exception.HumanAddException;
 import com.ithilel.HumanController;
 import com.ithilel.menu.base.MenuItem;
 
@@ -12,7 +13,7 @@ public class NewHumanMenuItem extends MenuItem {
     }
 
     @Override
-    public void exec() {
+    public void exec() throws HumanAddException {
         controller.readHuman();
     }
 }

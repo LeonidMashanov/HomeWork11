@@ -1,5 +1,8 @@
 package com.ithilel.menu.base;
 
+import com.ithilel.Exception.HumanAddException;
+import com.ithilel.Exception.NotFoundException;
+
 public abstract class MenuItem {
     private String name;
     private boolean closeAfter;
@@ -18,7 +21,7 @@ public abstract class MenuItem {
         return name;
     }
 
-    public abstract void exec();
+    public abstract void exec() throws HumanAddException, NotFoundException;
 
     public boolean closeAfter() {
         return closeAfter;
